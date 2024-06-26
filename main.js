@@ -5,7 +5,7 @@ createApp ({
 
         const product = ref('Boots')
         const description = ref('Size 36-45')
-        const image = ref('./assets/image/sock_green.jpg')
+        const image = ref('./assets/images/socks_green.jpg')
         return {
             product , 
             description ,

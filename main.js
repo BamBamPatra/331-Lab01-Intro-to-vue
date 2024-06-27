@@ -4,6 +4,7 @@ createApp ({
     setup(){
 
         const product = ref('Boots')
+        const brand = ref('SE 331')
         const description = ref('Size 36-45')
         const image = ref('./assets/images/socks_green.jpg')
         const inStock = ref(true)
@@ -36,6 +37,7 @@ createApp ({
 
         return {
             product , 
+            brand ,
             description ,
             image ,
             link , 

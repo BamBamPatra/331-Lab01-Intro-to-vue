@@ -16,8 +16,8 @@ createApp ({
             '20% polyester'
         ])
         const variants = ref([
-            {id: 2234 , color: 'green'} ,
-            {id: 2235 , color: 'blue'}
+            {id: 2234 , color: 'green' , image: './assets/images/socks_green.jpg'} ,
+            {id: 2235 , color: 'blue' , image: './assets/images/socks_blue.jpg'}
         ])
         const sizes = ref([
             'S  ' , 'M  ' , 'L  '

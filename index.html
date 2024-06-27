@@ -33,6 +33,9 @@
             <p v-if="onSale">On Sale</p>
             <p v-else>Out of Sale</p>
 
+            <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            
             <ul>
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
@@ -44,6 +47,8 @@
             <p><span v-for="size in sizes">{{size}}</span></p>
 
             <button class="button" @click="addToCart">Add To Cart</button>
+
+            <button class="button" @click="updateStock">In Stock</button>
 
         </div>
         

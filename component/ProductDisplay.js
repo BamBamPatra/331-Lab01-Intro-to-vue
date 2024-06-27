@@ -37,8 +37,8 @@ const productDisplay = {
                 <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To Cart</button>
             </div>
 
-            <review-list :reviews="reviews"></review-list>
-            <review-form @review-subbited="addReview"></review-form>
+            <review-list v-if="reviews.length" :reviews="reviews"></review-list>
+            <review-form @review-submitted="addReview"></review-form>
             
             <button class="button" @click="updateStock">In Stock</button>
 
@@ -123,7 +123,8 @@ const productDisplay = {
             updateVariant ,
             shipping ,
             deleteCart ,
-            addReview
+            addReview ,
+            reviews
         }
     }
     

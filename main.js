@@ -6,8 +6,6 @@ createApp ({
         const product = ref('Boots')
         const brand = ref('SE 331')
         const description = ref('Size 36-45')
-        const image = ref('./assets/images/socks_green.jpg')
-        const inStock = ref(true)
         const inventory = ref(9)
         const onSale = ref(true)
         const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
@@ -17,15 +15,22 @@ createApp ({
             '20% polyester'
         ])
         const variants = ref([
-            {id: 2234 , color: 'green' , image: './assets/images/socks_green.jpg'} ,
-            {id: 2235 , color: 'blue' , image: './assets/images/socks_blue.jpg'}
+            {id: 2234 , color: 'green' , image: './assets/images/socks_green.jpg' , quantity: 50} ,
+            {id: 2235 , color: 'blue' , image: './assets/images/socks_blue.jpg' , quantity: 0}
         ])
+        const selectdVariant =ref(0)
         const sizes = ref([
             'S  ' , 'M  ' , 'L  '
         ])
         const cart = ref(0)
         const title = computed(() => {
             return brand.value + ' ' + product.value
+        })
+        const image = computed(() => {
+            return variants.value[selectdVariant.value].image
+        })
+        const inStock = computed(() => {
+            return variants.value[selectdVariant.value].quantity
         })
 
         function addToCart(){
@@ -36,6 +41,9 @@ createApp ({
         }
         function updateStock(){
             inStock.value =! inStock.value
+        }
+        function updateVariant(index){
+            selectdVariant.value = index;
         }
 
         return {
@@ -52,7 +60,8 @@ createApp ({
             cart ,
             addToCart ,
             updateImage ,
-            updateStock
+            updateStock ,
+            updateVariant
         }
     }
 }) .mount('#app')

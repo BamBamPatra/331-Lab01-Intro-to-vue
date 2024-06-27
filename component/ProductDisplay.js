@@ -39,6 +39,8 @@ const productDisplay = {
             
             <button class="button" @click="updateStock">In Stock</button>
 
+            <button class="button" @click="deleteCart">Delete Cart</button>
+
         </div>
     ` ,
     props: {
@@ -93,6 +95,9 @@ const productDisplay = {
         function updateVariant(index){
             selectedVariant.value = index;
         }
+        function deleteCart() {
+            emit('delete-cart' , variants.value[selectedVariant.value].id)
+        }
 
         return {
             title ,
@@ -109,7 +114,8 @@ const productDisplay = {
             updateImage ,
             updateStock ,
             updateVariant ,
-            shipping
+            shipping ,
+            deleteCart
         }
     }
     

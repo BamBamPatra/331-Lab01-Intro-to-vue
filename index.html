@@ -16,7 +16,7 @@
 
         <div class="cart">Cart({{cart}})</div>
 
-        <product-display :premium="premium" :details="details" @add-to-cart="updateCart"></product-display>
+        <product-display :premium="premium" :details="details" @add-to-cart="updateCart" @delete-cart="removeFromCart"></product-display>
         
     </div>
 

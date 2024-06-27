@@ -45,7 +45,7 @@ const productDisplay = {
         premium: Boolean ,
         details: Array
     } ,
-    setup(props){
+    setup(props , {emit}){
 
         const product = ref('Boots')
         const brand = ref('SE 331')
@@ -82,7 +82,7 @@ const productDisplay = {
         })
 
         function addToCart(){
-            cart.value +=1
+           emit('add-to-cart')
         }
         function updateImage(variantImage){
             image.value = variantImage

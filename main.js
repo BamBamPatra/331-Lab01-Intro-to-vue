@@ -7,6 +7,7 @@ createApp ({
         const description = ref('Size 36-45')
         const image = ref('./assets/images/socks_green.jpg')
         const inStock = ref(true)
+        const inventory = ref(100)
         const link = ref('https://www.camt.cmu.ac.th/index.php/th/')
 
         return {
@@ -14,7 +15,8 @@ createApp ({
             description ,
             image ,
             link , 
-            inStock
+            inStock ,
+            inventory
         }
     }
 }) .mount('#app')

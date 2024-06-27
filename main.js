@@ -15,24 +15,25 @@ createApp ({
             '20% polyester'
         ])
         const variants = ref([
-            {id: 2234 , color: 'green' , image: './assets/images/socks_green.jpg' , quantity: 50} ,
-            {id: 2235 , color: 'blue' , image: './assets/images/socks_blue.jpg' , quantity: 0}
+            {id: 2234 , color: 'green' , image: './assets/images/socks_green.jpg' , quantity: 50 , onSale: true} ,
+            {id: 2235 , color: 'blue' , image: './assets/images/socks_blue.jpg' , quantity: 0 , onSale: false}
         ])
-        const selectdVariant =ref(0)
+        const selectedVariant =ref(0)
         const sizes = ref([
             'S  ' , 'M  ' , 'L  '
         ])
         const cart = ref(0)
         const title = computed(() => {
-            return brand.value + ' ' + product.value
+            const variant = variants.value[selectedVariant.value]
+            return brand.value + ' ' + product.value + ' ' + (variant.onSale ? ' is on sale' : ' not on sale')
+    
         })
         const image = computed(() => {
-            return variants.value[selectdVariant.value].image
+            return variants.value[selectedVariant.value].image
         })
         const inStock = computed(() => {
-            return variants.value[selectdVariant.value].quantity
+            return variants.value[selectedVariant.value].quantity
         })
-
         function addToCart(){
             cart.value +=1
         }
@@ -43,7 +44,7 @@ createApp ({
             inStock.value =! inStock.value
         }
         function updateVariant(index){
-            selectdVariant.value = index;
+            selectedVariant.value = index;
         }
 
         return {

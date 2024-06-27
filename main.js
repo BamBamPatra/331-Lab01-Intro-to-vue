@@ -27,6 +27,9 @@ createApp ({
         function addToCart(){
             cart.value +=1
         }
+        function updateImage(variantImage){
+            image.value = variantImage
+        }
 
         return {
             product , 
@@ -40,7 +43,8 @@ createApp ({
             variants ,
             sizes ,
             cart ,
-            addToCart
+            addToCart ,
+            updateImage
         }
     }
 }) .mount('#app')

@@ -16,11 +16,12 @@
 
         <div class="cart">Cart({{cart}})</div>
 
-        <product-display></product-display>
+        <product-display :premium="premium" :details="details"></product-display>
         
     </div>
 
     <!-- Import Js -->
+    <script src="./component/productDetail.js"></script>
     <script src="./component/ProductDisplay.js"></script>
     <script src="./main.js"></script>
 </body>

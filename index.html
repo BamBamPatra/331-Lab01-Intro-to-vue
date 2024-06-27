@@ -35,12 +35,12 @@
 
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
-            
+
             <ul>
                 <li v-for="detail in details">{{detail}}</li>
             </ul>
 
-            <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">
+            <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)" class="color-circle">
                 {{variant.color}}
             </div>
 

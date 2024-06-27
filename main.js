@@ -11,10 +11,15 @@ const app = createApp ({
             "20% polyester"
         ])
 
+        function updateCart(){
+            cart.value +=1
+        }
+
         return {
             cart ,
             premium ,
-            details
+            details ,
+            updateCart
         }
     }
 }) 

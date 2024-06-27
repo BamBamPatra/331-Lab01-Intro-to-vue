@@ -1,4 +1,4 @@
-const { createApp , ref } = Vue 
+const { createApp , ref , computed} = Vue 
 
 createApp ({
     setup(){
@@ -24,6 +24,9 @@ createApp ({
             'S  ' , 'M  ' , 'L  '
         ])
         const cart = ref(0)
+        const title = computed(() => {
+            return brand.value + ' ' + product.value
+        })
 
         function addToCart(){
             cart.value +=1
@@ -36,8 +39,7 @@ createApp ({
         }
 
         return {
-            product , 
-            brand ,
+            title ,
             description ,
             image ,
             link , 

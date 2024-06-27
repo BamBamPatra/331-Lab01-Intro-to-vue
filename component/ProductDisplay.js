@@ -37,7 +37,8 @@ const productDisplay = {
                 <button class="button" :disabled='!inStock' @click="addToCart" :class="{disabledButton: !inStock}">Add To Cart</button>
             </div>
 
-            <review-form></review-form>
+            <review-list :reviews="reviews"></review-list>
+            <review-form @review-subbited="addReview"></review-form>
             
             <button class="button" @click="updateStock">In Stock</button>
 
@@ -84,6 +85,7 @@ const productDisplay = {
                 return 30
             }
         })
+        const reviews = ref([])
 
         function addToCart(){
            emit('add-to-cart' , variants.value[selectedVariant.value].id)
@@ -99,6 +101,9 @@ const productDisplay = {
         }
         function deleteCart() {
             emit('delete-cart' , variants.value[selectedVariant.value].id)
+        }
+        function addReview(review){
+            reviews.value.push(review)
         }
 
         return {
@@ -117,7 +122,8 @@ const productDisplay = {
             updateStock ,
             updateVariant ,
             shipping ,
-            deleteCart
+            deleteCart ,
+            addReview
         }
     }
     

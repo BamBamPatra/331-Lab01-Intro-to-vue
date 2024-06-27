@@ -44,4 +44,5 @@ const app = createApp ({
 app.component('product-display' , productDisplay)
     .component('product-details' , productdetails)
     .component('review-form' , reviewForm)
+    .component('review-list' , reviewList)
     .mount('#app')

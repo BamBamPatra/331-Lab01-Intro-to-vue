@@ -39,6 +39,7 @@ const reviewForm = {
                 form.name =''
                 form.review = ''
                 form.rating = null
+                console.log(productReview)
             }
             return {
                 form ,

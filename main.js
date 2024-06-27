@@ -11,8 +11,15 @@ const app = createApp ({
             "20% polyester"
         ])
 
-        function updateCart(id){
-            cart.value.push(id)
+        function updateCart(_id) {
+            for (var i = 0; i < cart.value.length; i++) {
+                if(cart.value[i].id === _id){
+                    cart.value[i].amount++;
+                    return;
+                }
+            }
+            cart.value.push({id:_id, amount: 1})
+            return;
         }
 
         return {

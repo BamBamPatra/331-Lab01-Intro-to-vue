@@ -1,4 +1,4 @@
-const { createApp , ref , computed} = Vue 
+const { createApp , ref , computed , reactive} = Vue 
 
 const app = createApp ({
     setup(){
@@ -43,4 +43,5 @@ const app = createApp ({
 }) 
 app.component('product-display' , productDisplay)
     .component('product-details' , productdetails)
+    .component('review-form' , reviewForm)
     .mount('#app')
